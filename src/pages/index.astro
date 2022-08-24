@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+---
+
+<Layout title="Happy Wedding ♥">
+	<Card
+		names={`Andrew & Julia`}
+	/>
+</Layout>
+
+<style>
+	:root {
+		font-family: 'Arvo', serif;
+		font-size: 18px;
+		line-height: 22px;
+		font-weight: 400;
+		letter-spacing: 0.5em;
+		text-transform: uppercase;
+
+		font-synthesis: none;
+		text-rendering: optimizeLegibility;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-text-size-adjust: 100%;
+	}
+
+	body {
+		margin: 0;
+		min-width: 320px;
+		min-height: 100vh;
+	}
+</style>
