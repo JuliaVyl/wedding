@@ -28,7 +28,7 @@ import { Timer } from '../components/Timer';
 				ДОРОГИЕ_ГОСТИ
 			</p>
 			<p class="text">
-				Приглашаем вас на торжество, посвященное нашему бракосочетанию
+				Приглашаем вас на торжество, посвященное нашей свадьбе
 			</p>
 		</section>
 
@@ -38,23 +38,28 @@ import { Timer } from '../components/Timer';
 				ПЛАН
 			</p>
 			<p class="steps">
-				<ul class="text">
-					<li>
-						14:00 Cбор гостей
-					</li>
-					<li>
-						14:30 Церемония
-					</li>
-					<li>
-						15:00 Фото с гостями
-					</li>
-					<li>
-						15:20 Фуршет
-					</li>
-					<li>
-						16:00 Банкет
-					</li>
-				</ul>
+				<div class="text plan">
+					<div class="plan-item">
+						<p class="plan-time">14:00</p>
+						<p class="plan-description">Cбор гостей</p>
+					</div>
+					<div class="plan-item">
+						<p class="plan-time">14:30</p>
+						<p class="plan-description">Церемония</p>
+					</div>
+					<div class="plan-item">
+						<p class="plan-time">15:00</p>
+						<p class="plan-description">Фото с гостями</p>
+					</div>
+					<div class="plan-item">
+						<p class="plan-time">15:20</p>
+						<p class="plan-description">Фуршет</p>
+					</div>
+					<div class="plan-item">
+						<p class="plan-time">16:00</p>
+						<p class="plan-description">Банкет</p>
+					</div>
+				</div>
 			</p>
 		</section>
 
@@ -65,7 +70,7 @@ import { Timer } from '../components/Timer';
 				ДРЕСС_КОД
 			</p>
 			<p class="text">
-				Зачем нам дресс-код? Только если дресс-КОТ! Хахахахах, ну а если серьезно - мужчины в брюках, рубашках (костюмы - по желанию), девушки - в красивых платьях (желательно спокойных тонов)
+				Зачем нам дресс-код? Только если дресс-КОТ! Хахахахах, ну а если серьезно - <strong class="strong-m"> мужчины</strong> в брюках, рубашках (костюмы - по желанию), <strong class="strong-w">девушки</strong> - в красивых платьях (желательно спокойных оттенков)
 			</p>
 		</section>
 
@@ -221,6 +226,22 @@ import { Timer } from '../components/Timer';
 		font-weight: bold;
 	}
 
+	.plan {
+		max-width: 100% !important;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.plan-item {
+		display: flex;
+		margin: 10px;
+	}
+
+	.plan-time {
+		width: 90px;
+		margin-right: 40px;
+	}
+
 	.guests .text, .plan .text, .dress .text, .place .text, .about-guest .form {
 		position: absolute;
 		max-width: 300px;
@@ -245,7 +266,7 @@ import { Timer } from '../components/Timer';
 		font-size: 14px;
 	}
 
-	#map {
+	#map {	
 		width: 300px;
 		height: 300px;
 		position: absolute;
@@ -384,6 +405,14 @@ import { Timer } from '../components/Timer';
 		animation-direction: alternate;
 	}
 
+	.strong-m {
+		color:rgb(124, 187, 218);
+	}
+
+	.strong-w {
+		color:rgb(197, 118, 201);
+	}
+
 	@media screen and (min-width: 768px) {
 		.intro {
 			background-image: url(/static/img/desktop.jpg);
@@ -409,6 +438,10 @@ import { Timer } from '../components/Timer';
 			right: 50px;
 		}
 
+		.plan {
+			max-width: 450px !important;
+		}
+
 		.guests .text, .plan .text, .dress .text, .place .text, .about-guest .form {
 			top: 50%;
 			left: unset;
@@ -418,7 +451,8 @@ import { Timer } from '../components/Timer';
 		}
 
 		.plan .text {
-			right: 40%;
+			left: 100%;
+			width: 500px;
 		}
 
 		.dress .text {
