@@ -10,6 +10,7 @@ import { Timer } from '../components/Timer';
 				Ю_А
 			</p>
 			<p class="title event">СВАДЬБА</p>
+			<p class="text date">new Date("1 октября 2022")</p>
 		</section>
 
 		<section class="section time_left">
@@ -22,6 +23,7 @@ import { Timer } from '../components/Timer';
 		</section>
 
 		<section class="section section_black guests">
+			<div class="container-image1"></div>
 			<p class="title name title__guests">
 				ДОРОГИЕ_ГОСТИ
 			</p>
@@ -31,6 +33,7 @@ import { Timer } from '../components/Timer';
 		</section>
 
 		<section class="section plan">
+			<div class="container-image2"></div>
 			<p class="title name">
 				ПЛАН
 			</p>
@@ -56,6 +59,8 @@ import { Timer } from '../components/Timer';
 		</section>
 
 		<section class="section section_black dress">
+			<div class="container-image3"></div>
+			<div class="container-image4"></div>
 			<p class="title name">
 				ДРЕСС_КОД
 			</p>
@@ -70,12 +75,12 @@ import { Timer } from '../components/Timer';
 			</p>
 			<p class="text">
 				Адрес - Киров, Ресторан Terrace, Профсоюзная ул. 23
-				<script src="//api-maps.yandex.ru/2.0/?load=package.standard,package.geoObjects&lang=ru-RU" type="text/javascript"></script>
 				<div id="map"></div>
 			</p>
 		</section>
 
 		<section class="section section_black about-guest">
+			<div class="container-sticker1"></div>
 			<p class="title name">
 				О_ВАС
 			</p>
@@ -109,6 +114,7 @@ import { Timer } from '../components/Timer';
 		</section>
 	</main>
 
+	<script src="//api-maps.yandex.ru/2.0/?load=package.standard,package.geoObjects&lang=ru-RU" type="text/javascript"></script>
 	<script>ymaps.ready(init);
 
 	function init() {
@@ -155,6 +161,7 @@ import { Timer } from '../components/Timer';
 
 	.title, .timer {
 		font: 30px Floripa, sans-serif;
+		z-index: 2;
 	}
 
 	p {
@@ -189,6 +196,12 @@ import { Timer } from '../components/Timer';
 		transform: translateX(-50%);
 	}
 
+	.date {
+		position: absolute;
+		top: 50%;
+		left: 20px;
+	}
+
 	.timer {
 		position: absolute;
 		top: 20%;
@@ -204,6 +217,8 @@ import { Timer } from '../components/Timer';
 	.text {
 		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
 			Bitstream Vera Sans Mono, Courier New, monospace;
+		z-index: 2;
+		font-weight: bold;
 	}
 
 	.guests .text, .plan .text, .dress .text, .place .text, .about-guest .form {
@@ -266,6 +281,109 @@ import { Timer } from '../components/Timer';
 		background-color: gray;
 	}
 
+	.container-image1 {
+		width: 200px;
+		height: 500px;
+		background-image: url(/static/img/1.jpg);
+		background-size: cover;
+		background-position: center;
+		position: absolute;
+		top: -100px;
+		right: 20px;
+		transition: 1s width ease-in-out;
+	}
+
+	.container-image1:hover {
+		width: 400px;
+		transition: 1s width ease-in-out;
+	}
+
+	.container-image2 {
+		width: 150px;
+		height: 300px;
+		background-image: url(/static/img/2.jpg);
+		background-size: cover;
+		background-position: center top;
+		position: absolute;
+		bottom: 50px;
+		z-index: 1;
+		left: 100px;
+		transition: 1s height ease-in-out;
+	}
+
+	.container-image2:hover {
+		height: 400px;
+		transition: 1s height ease-in-out;
+	}
+
+	.container-image3 {
+		width: 150px;
+		height: 300px;
+		background-image: url(/static/img/3.jpg);
+		background-size: cover;
+		background-position: center top;
+		position: absolute;
+		top: 70%;
+		left: 40%;
+		z-index: 1;
+		transform: translate(-50%, -50%);
+		transition: .5s height;
+	}
+
+	.container-image3:hover {
+		height: 500px;
+		transition: .5s height;
+	}
+
+	.container-image3:hover ~ .container-image4 {
+		opacity: 0;
+		transition: .5s opacity;
+	}
+
+	.container-image4 {
+		width: 100px;
+		height: 200px;
+		background-image: url(/static/img/4.jpg);
+		background-size: cover;
+		background-position: center top;
+		position: absolute;
+		top: 70%;
+		right: 0;
+		z-index: 1;
+		transform: translate(-50%, -50%);
+		transition: .5s opacity;
+	}
+
+	.container-sticker1 {
+		width: 220px;
+		height: 250px;
+		background-image: url(/static/img/sticker1.webp);
+		background-size: cover;
+		background-position: center top;
+		position: absolute;
+		top: 70%;
+		right: 0;
+		z-index: 1;
+		transform: translate(-50%, -50%);
+	}
+
+	@keyframes cat {
+		from {
+			transform: translate(-50%, -50%) rotate(0deg);
+		}
+
+		to {
+			transform: translate(-50%, -50%) rotate(180deg);
+		}
+	}
+
+	.container-sticker1:hover {
+		animation-duration: 1s;
+		animation-name: cat;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+	}
+
 	@media screen and (min-width: 768px) {
 		.intro {
 			background-image: url(/static/img/desktop.jpg);
@@ -294,9 +412,17 @@ import { Timer } from '../components/Timer';
 		.guests .text, .plan .text, .dress .text, .place .text, .about-guest .form {
 			top: 50%;
 			left: unset;
-			right: 30%;
+			right: 50%;
 			max-width: 400px;
 			transform: translateY(-50%);
+		}
+
+		.plan .text {
+			right: 40%;
+		}
+
+		.dress .text {
+			right: 30%;
 		}
 
 		.dress .title, .place .title  {
@@ -326,6 +452,35 @@ import { Timer } from '../components/Timer';
 		
 		.about-guest .form {
 			font-size: 16px;
+		}
+
+		.container-image2 {
+			width: 200px;
+			height: 500px;
+			bottom: -100px;
+		}
+
+		.container-image2:hover {
+			height: 600px;
+		}
+
+		.container-image3 {
+			width: 200px;
+			height: 500px;
+			top: 50%;
+			left: 20%;
+		}
+		
+		.container-image3:hover {
+			height: 550px;
+		}
+
+		.container-image4 {
+			width: 150px;
+			height: 300px;
+			top: 50%;
+			left: 30%;
+			right: unset;
 		}
 	}
 </style>
