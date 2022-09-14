@@ -10,6 +10,12 @@
     "astro": "astro"
   },
   "devDependencies": {
-    "astro": "^1.0.8"
+    "astro": "^1.2.3"
+  },
+  "dependencies": {
+    "@astrojs/react": "^1.1.2",
+    "@types/react": "17",
+    "react": "17",
+    "react-dom": "17"
   }
 }
