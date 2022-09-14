@@ -22,11 +22,9 @@ const { title } = Astro.props as Props;
 	<body>
 		<slot />
 
-		<!-- Insert this script at the bottom of the HTML, but before you use any Firebase services -->
 		<script type="module">
 			import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js'
 
-			// Add Firebase products that you want to use
 			import { setDoc, getFirestore, doc } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js'
 
 			const firebaseConfig = {
@@ -37,19 +35,34 @@ const { title } = Astro.props as Props;
 				messagingSenderId: "308785874685",
 				appId: "1:308785874685:web:a4a96c319c08989892a094"
 			};
-			// Initialize Firebase
 			const firebaseApp = initializeApp(firebaseConfig);
 			const db = getFirestore(firebaseApp)
 
 			const form = document.getElementById('form')
+			const submitBtn = document.getElementById('btn-submit')
+			const isSubmitted = localStorage.getItem('submitted')
 
-			form.onsubmit = (e) => {
+			if (isSubmitted) {
+				submitBtn.textContent = 'Тыкнуто'
+				submitBtn.disabled = true
+			}
+
+			form.onsubmit = async (e) => {
 				e.preventDefault();
 
 				const formData = new FormData(e.target);
 				const data = Object.fromEntries(formData);
 
-				setDoc(doc(db, "guests", data.firstname), data);
+				submitBtn.textContent = 'Тыкаю'
+				try {
+					await setDoc(doc(db, "guests", data.firstname), data);
+					form.reset();
+					submitBtn.textContent = 'Тыкнуто'
+					submitBtn.disabled = true
+					localStorage.setItem('submitted', 'true')
+				} catch {
+					console.error('error while sending');
+				}
 			}
 		</script>
 	</body>

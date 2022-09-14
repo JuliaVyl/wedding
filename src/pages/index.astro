@@ -102,7 +102,7 @@ import { Timer } from '../components/Timer';
 						<input type="radio" name="okay" value="not-okay">
 					</div>
 					<div class="field">
-						<button type="submit" class="text button">Тыкнуть</button>
+						<button type="submit" id="btn-submit" class="text button">Тыкнуть</button>
 					</div>
 				</form>
 			</p>
@@ -260,6 +260,10 @@ import { Timer } from '../components/Timer';
 		border: 1px solid white;
 		color: white;
 		cursor: pointer;
+	}
+
+	.button:disabled {
+		background-color: gray;
 	}
 
 	@media screen and (min-width: 768px) {
