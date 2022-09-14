@@ -1,6 +1,6 @@
-import { useEffect, useLayoutEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
-const primaryDate = new Date('2022-10-01T14:00:00')
+const primaryDate = new Date('2022-10-01T10:00:00')
 
 const round = (n: number): string => {
   return n < 10 ? `0${n}` : n.toString()
