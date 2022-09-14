@@ -28,7 +28,7 @@ const { title } = Astro.props as Props;
 			import { setDoc, getFirestore, doc } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js'
 
 			const firebaseConfig = {
-				apiKey: import.meta.env.API_KEY,
+				apiKey: import.meta.env.PUBLIC_API_KEY,
 				authDomain: "wedding-abe1d.firebaseapp.com",
 				projectId: "wedding-abe1d",
 				storageBucket: "wedding-abe1d.appspot.com",

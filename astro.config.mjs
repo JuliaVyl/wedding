@@ -6,4 +6,7 @@ import vercel from "@astrojs/vercel/static";
 export default defineConfig({
   integrations: [react()],
   adapter: vercel(),
+  define: {
+    'process.env': {}
+  }
 });

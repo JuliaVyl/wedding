@@ -16,6 +16,7 @@
     "@astrojs/react": "^1.1.2",
     "@astrojs/vercel": "^2.0.0",
     "@types/react": "17",
+    "firebase": "^9.9.4",
     "react": "17",
     "react-dom": "17"
   }
