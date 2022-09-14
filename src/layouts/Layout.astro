@@ -24,12 +24,12 @@ const { title } = Astro.props as Props;
 		
 		<script src="https://unpkg.com/pageable@latest/dist/pageable.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 		<script>
-			// new Pageable("#fullpage", {
-			// 	childSelector: ".section",
-			// 	animation: 1000,
-			// 	delay: 100,
-			// 	swipeThreshold: 90
-			// });
+			new Pageable("#fullpage", {
+				childSelector: ".section",
+				animation: 1000,
+				delay: 100,
+				swipeThreshold: 90
+			});
 		</script>
 
 		<!-- Insert this script at the bottom of the HTML, but before you use any Firebase services -->
