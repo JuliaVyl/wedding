@@ -1,520 +1,538 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Picture } from '@astrojs/image/components';
 import { Timer } from '../components/Timer';
+import img1 from '../assets/img/1.jpg';
 ---
 
-<Layout title="Happy Wedding ♥">
-	<main id="fullpage">
-		<section class="section section_black intro">
-			<p class="title name">
-				Ю_А
-			</p>
-			<p class="title event">СВАДЬБА</p>
-			<p class="text date">new Date("1 октября 2022")</p>
-		</section>
+<Layout title='Happy Wedding ♥'>
+  <main id='fullpage'>
+    <section class='section section_black intro'>
+      <p class='title name'>Ю_А</p>
+      <p class='title event'>СВАДЬБА</p>
+      <p class='text date'>new Date("1 октября 2022")</p>
+    </section>
 
-		<section class="section time_left">
-			<p class="title name">
-				TIME_LEFT
-			</p>
-			<p class="timer">
-				<Timer client:only="react" />
-			</p>
-		</section>
+    <section class='section time_left'>
+      <p class='title name'>TIME_LEFT</p>
+      <p class='timer'>
+        <Timer client:only='react' />
+      </p>
+    </section>
 
-		<section class="section section_black guests">
-			<div class="container-image1"></div>
-			<p class="title name title__guests">
-				ДОРОГИЕ_ГОСТИ
-			</p>
-			<p class="text">
-				Приглашаем вас на торжество, посвященное нашей свадьбе
-			</p>
-		</section>
+    <section class='section section_black guests'>
+      <!-- <div class='container-image1'> -->
+      <Picture
+        src={img1}
+        widths={[200, 400, 1500]}
+        sizes='(max-width: 800px) 100vw, 800px'
+        alt='descriptive text'
+        class='container-image1'
+      />
+      <!-- </div> -->
+      <p class='title name title__guests'>ДОРОГИЕ_ГОСТИ</p>
+      <p class='text'>Приглашаем вас на торжество, посвященное нашей свадьбе</p>
+    </section>
 
-		<section class="section plan">
-			<div class="container-image2"></div>
-			<p class="title name">
-				ПЛАН
-			</p>
-			<p class="steps">
-				<div class="text plan">
-					<div class="plan-item">
-						<p class="plan-time">14:00</p>
-						<p class="plan-description">Cбор гостей</p>
-					</div>
-					<div class="plan-item">
-						<p class="plan-time">14:30</p>
-						<p class="plan-description">Церемония</p>
-					</div>
-					<div class="plan-item">
-						<p class="plan-time">15:00</p>
-						<p class="plan-description">Фото с гостями</p>
-					</div>
-					<div class="plan-item">
-						<p class="plan-time">15:20</p>
-						<p class="plan-description">Фуршет</p>
-					</div>
-					<div class="plan-item">
-						<p class="plan-time">16:00</p>
-						<p class="plan-description">Банкет</p>
-					</div>
-				</div>
-			</p>
-		</section>
+    <section class='section plan'>
+      <div class='container-image2'></div>
+      <p class='title name'>ПЛАН</p>
+      <p class='steps'></p><div class='text plan'>
+        <div class='plan-item'>
+          <p class='plan-time'>14:00</p>
+          <p class='plan-description'>Cбор гостей</p>
+        </div>
+        <div class='plan-item'>
+          <p class='plan-time'>14:30</p>
+          <p class='plan-description'>Церемония</p>
+        </div>
+        <div class='plan-item'>
+          <p class='plan-time'>15:00</p>
+          <p class='plan-description'>Фото с гостями</p>
+        </div>
+        <div class='plan-item'>
+          <p class='plan-time'>15:20</p>
+          <p class='plan-description'>Фуршет</p>
+        </div>
+        <div class='plan-item'>
+          <p class='plan-time'>16:00</p>
+          <p class='plan-description'>Банкет</p>
+        </div>
+      </div>
+    </section>
 
-		<section class="section section_black dress">
-			<div class="container-image3"></div>
-			<div class="container-image4"></div>
-			<p class="title name">
-				ДРЕСС_КОД
-			</p>
-			<p class="text">
-				Зачем нам дресс-код? Только если дресс-КОТ! Хахахахах, ну а если серьезно - <strong class="strong-m"> мужчины</strong> в брюках, рубашках (костюмы - по желанию), <strong class="strong-w">девушки</strong> - в красивых платьях (желательно спокойных оттенков)
-			</p>
-		</section>
+    <section class='section section_black dress'>
+      <div class='container-image3'></div>
+      <div class='container-image4'></div>
+      <p class='title name'>ДРЕСС_КОД</p>
+      <p class='text'>
+        Зачем нам дресс-код? Только если дресс-КОТ! Хахахахах, ну а если
+        серьезно - <strong class='strong-m'> мужчины</strong> в брюках, рубашках
+        (костюмы - по желанию), <strong class='strong-w'>девушки</strong> - в красивых
+        платьях (желательно спокойных оттенков)
+      </p>
+    </section>
 
-		<section class="section place">
-			<p class="title name">
-				МЕСТО
-			</p>
-			<p class="text">
-				Адрес - Киров, Ресторан Terrace, Профсоюзная ул. 23
-				<div id="map"></div>
-			</p>
-		</section>
+    <section class='section place'>
+      <p class='title name'>МЕСТО</p>
+      <p class='text'>
+        Адрес - Киров, Ресторан Terrace, Профсоюзная ул. 23
+      </p><div id='map'></div>
+    </section>
 
-		<section class="section section_black about-guest">
-			<div class="container-sticker1"></div>
-			<p class="title name">
-				О_ВАС
-			</p>
-			<p class="text">
-				<form id="form" class="form">
-					<div class="field">
-						<label for="firstname" class="text">Имя</label>
-						<input type="text" name="firstname" required>
-					</div>
-					<div class="field">
-						<label for="secondname" class="text">Фамилия</label>
-						<input type="text" name="secondname" required>
-					</div>
-					<div class="field">
-						<label for="plus-one" class="text">Плюс 1?</label>
-						<input type="checkbox" name="plus-one">
-					</div>
-					<div class="field">
-						<label for="okay" class="text">Приду :)</label>
-						<input type="radio" name="okay" checked value="okay">
-					</div>
-					<div class="field">
-						<label for="okay" class="text">Не приду :(</label>
-						<input type="radio" name="okay" value="not-okay">
-					</div>
-					<div class="field">
-						<button type="submit" id="btn-submit" class="text button">Тыкнуть</button>
-					</div>
-				</form>
-			</p>
-		</section>
-	</main>
+    <section class='section section_black about-guest'>
+      <div class='container-sticker1'></div>
+      <p class='title name'>О_ВАС</p>
+      <p class='text'></p><form id='form' class='form'>
+        <div class='field'>
+          <label for='firstname' class='text'>Имя</label>
+          <input type='text' name='firstname' required />
+        </div>
+        <div class='field'>
+          <label for='secondname' class='text'>Фамилия</label>
+          <input type='text' name='secondname' required />
+        </div>
+        <div class='field'>
+          <label for='plus-one' class='text'>Плюс 1?</label>
+          <input type='checkbox' name='plus-one' />
+        </div>
+        <div class='field'>
+          <label for='okay' class='text'>Приду :)</label>
+          <input type='radio' name='okay' checked value='okay' />
+        </div>
+        <div class='field'>
+          <label for='okay' class='text'>Не приду :(</label>
+          <input type='radio' name='okay' value='not-okay' />
+        </div>
+        <div class='field'>
+          <button type='submit' id='btn-submit' class='text button'
+            >Тыкнуть</button
+          >
+        </div>
+      </form>
+    </section>
+  </main>
 
-	<script src="//api-maps.yandex.ru/2.0/?load=package.standard,package.geoObjects&lang=ru-RU" type="text/javascript"></script>
-	<script>ymaps.ready(init);
+  <script
+    src='//api-maps.yandex.ru/2.0/?load=package.standard,package.geoObjects&lang=ru-RU'
+    type='text/javascript'
+  ></script>
+  <script>
+    ymaps.ready(init);
 
-	function init() {
-		var myMap = new ymaps.Map("map", {
-				center: [58.61605910515243, 49.6774369],
-				zoom: 15
-			}),
+    function init() {
+      var myMap = new ymaps.Map('map', {
+          center: [58.61605910515243, 49.6774369],
+          zoom: 15,
+        }),
+        myPlacemark1 = new ymaps.Placemark(
+          [58.61605910515243, 49.6774369],
+          {
+            hintContent: 'Сюда',
+          },
+          {
+            iconImageHref:
+              'https://www.svgrepo.com/show/81154/marriage-rings-couple-with-a-heart.svg',
+            iconImageOffset: [-20, 0],
+          }
+        );
 
-			myPlacemark1 = new ymaps.Placemark([58.61605910515243, 49.6774369], {
-				hintContent: 'Сюда'
-			}, {
-				iconImageHref: 'https://www.svgrepo.com/show/81154/marriage-rings-couple-with-a-heart.svg',
-				iconImageOffset: [-20, 0]
-			})
-		
-		myMap.geoObjects
-			.add(myPlacemark1)
-
-	}
-	</script>
+      myMap.geoObjects.add(myPlacemark1);
+    }
+  </script>
 </Layout>
 
 <style>
-	:root {
-		font-family: 'Arvo', serif;
-		font-size: 18px;
-		line-height: 22px;
-		font-weight: 400;
-		letter-spacing: 0.5em;
-		text-transform: uppercase;
+  :root {
+    font-family: 'Arvo', serif;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 400;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
 
-		font-synthesis: none;
-		text-rendering: optimizeLegibility;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-		-webkit-text-size-adjust: 100%;
-	}
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+  }
 
-	.section {
-		height: 100vh;
-		width: 100vw;
-		position: relative;
-	}
+  .section {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+  }
 
-	.title, .timer {
-		font: 30px Floripa, sans-serif;
-		z-index: 2;
-	}
+  .title,
+  .timer {
+    font: 30px Floripa, sans-serif;
+    z-index: 2;
+  }
 
-	p {
-		margin: 0;
-	}
+  p {
+    margin: 0;
+  }
 
-	.intro {
-		background-image: url(/static/img/mobile.jpg);
-		background-size: cover;
-		background-position: center;
-	}
+  .intro {
+    background-image: url(/static/img/mobile.jpg);
+    background-size: cover;
+    background-position: center;
+  }
 
-	.section_black {
-		background-color: var(--color-text);
-		color: var(--color-bg)
-	}
+  .section_black {
+    background-color: var(--color-text);
+    color: var(--color-bg);
+  }
 
-	.name {
-		position: absolute;
-		bottom: 40px;
-		left: 20px;
-		display: flex;
-		align-items: center;
-		writing-mode: vertical-lr;
-		transform: rotate(180deg);
-	}
-	
-	.event {
-		position: absolute;
-		top: 40px;
-		left: 50%;
-		transform: translateX(-50%);
-	}
+  .name {
+    position: absolute;
+    bottom: 40px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+  }
 
-	.date {
-		position: absolute;
-		top: 50%;
-		left: 20px;
-	}
+  .event {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 
-	.timer {
-		position: absolute;
-		top: 20%;
-		display: inline-block;
-		left: 20px;
-		transform: translateY(-50%);
-	}
+  .date {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+  }
 
-	.title__guests {
-		font-size: 20px;
-	}
+  .timer {
+    position: absolute;
+    top: 20%;
+    display: inline-block;
+    left: 20px;
+    transform: translateY(-50%);
+  }
 
-	.text {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-		z-index: 2;
-		font-weight: bold;
-	}
+  .title__guests {
+    font-size: 20px;
+  }
 
-	.plan {
-		max-width: 100% !important;
-		display: flex;
-		flex-direction: column;
-	}
+  .text {
+    font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+      DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+    z-index: 2;
+    font-weight: bold;
+  }
 
-	.plan-item {
-		display: flex;
-		margin: 10px;
-	}
+  .plan {
+    max-width: 100% !important;
+    display: flex;
+    flex-direction: column;
+  }
 
-	.plan-time {
-		width: 90px;
-		margin-right: 40px;
-	}
+  .plan-item {
+    display: flex;
+    margin: 10px;
+  }
 
-	.guests .text, .plan .text, .dress .text, .place .text, .about-guest .form {
-		position: absolute;
-		max-width: 300px;
-		top: 5%;
-		left: 20px;
-	}
+  .plan-time {
+    width: 90px;
+    margin-right: 40px;
+  }
 
-	ul {
-		list-style: none;
-		padding: 0;
-	}
+  .guests .text,
+  .plan .text,
+  .dress .text,
+  .place .text,
+  .about-guest .form {
+    position: absolute;
+    max-width: 300px;
+    top: 5%;
+    left: 20px;
+  }
 
-	.dress .title {
-		font-size: 16px;
-	}
+  ul {
+    list-style: none;
+    padding: 0;
+  }
 
-	.dress .text {
-		font-size: 14px;
-	}
+  .dress .title {
+    font-size: 16px;
+  }
 
-	.place .title {
-		font-size: 14px;
-	}
+  .dress .text {
+    font-size: 14px;
+  }
 
-	#map {	
-		width: 300px;
-		height: 300px;
-		position: absolute;
-		filter: grayscale(1);
-		top: 50%;
-		left: 20px;
-		transform: translateY(-50%);
-	}
+  .place .title {
+    font-size: 14px;
+  }
 
-	.field {
-		margin: 10px 0;
-		display: flex;
-		justify-content: space-between;
-	}
+  #map {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    filter: grayscale(1);
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+  }
 
-	.about-guest .form {
-		font-size: 14px;
-		width: 100vw;
-		font-weight: bold;
-	}
+  .field {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+  }
 
-	.button {
-		margin-top: 10px;
-		width: 100%;
-		height: 40px;
-		background-color: black;
-		border: 1px solid white;
-		color: white;
-		cursor: pointer;
-	}
+  .about-guest .form {
+    font-size: 14px;
+    width: 100vw;
+    font-weight: bold;
+  }
 
-	.button:disabled {
-		background-color: gray;
-	}
+  .button {
+    margin-top: 10px;
+    width: 100%;
+    height: 40px;
+    background-color: black;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+  }
 
-	.container-image1 {
-		width: 200px;
-		height: 500px;
-		background-image: url(/static/img/1.jpg);
-		background-size: cover;
-		background-position: center;
-		position: absolute;
-		top: -100px;
-		right: 20px;
-		transition: 1s width ease-in-out;
-	}
+  .button:disabled {
+    background-color: gray;
+  }
 
-	.container-image1:hover {
-		width: 400px;
-		transition: 1s width ease-in-out;
-	}
+  .container-image1 {
+    width: 200px;
+    height: 500px;
+    /* background-image: url(/static/img/1.jpg); */
+    /* background-size: cover;
+    background-position: center; */
+    position: absolute;
+    top: -100px;
+    right: 20px;
+    transition: 1s width ease-in-out;
+  }
 
-	.container-image2 {
-		width: 150px;
-		height: 300px;
-		background-image: url(/static/img/2.jpg);
-		background-size: cover;
-		background-position: center top;
-		position: absolute;
-		bottom: 50px;
-		z-index: 1;
-		left: 100px;
-		transition: 1s height ease-in-out;
-	}
+  img {
+    height: 100% !important;
+  }
 
-	.container-image2:hover {
-		height: 400px;
-		transition: 1s height ease-in-out;
-	}
+  .container-image1 > img {
+    height: 100%;
+  }
 
-	.container-image3 {
-		width: 150px;
-		height: 300px;
-		background-image: url(/static/img/3.jpg);
-		background-size: cover;
-		background-position: center top;
-		position: absolute;
-		top: 70%;
-		left: 40%;
-		z-index: 1;
-		transform: translate(-50%, -50%);
-		transition: .5s height;
-	}
+  .container-image1:hover {
+    width: 400px;
+    transition: 1s width ease-in-out;
+  }
 
-	.container-image3:hover {
-		height: 500px;
-		transition: .5s height;
-	}
+  .container-image2 {
+    width: 150px;
+    height: 300px;
+    background-image: url(/static/img/2.jpg);
+    background-size: cover;
+    background-position: center top;
+    position: absolute;
+    bottom: 50px;
+    z-index: 1;
+    left: 100px;
+    transition: 1s height ease-in-out;
+  }
 
-	.container-image3:hover ~ .container-image4 {
-		opacity: 0;
-		transition: .5s opacity;
-	}
+  .container-image2:hover {
+    height: 400px;
+    transition: 1s height ease-in-out;
+  }
 
-	.container-image4 {
-		width: 100px;
-		height: 200px;
-		background-image: url(/static/img/4.jpg);
-		background-size: cover;
-		background-position: center top;
-		position: absolute;
-		top: 70%;
-		right: 0;
-		z-index: 1;
-		transform: translate(-50%, -50%);
-		transition: .5s opacity;
-	}
+  .container-image3 {
+    width: 150px;
+    height: 300px;
+    background-image: url(/static/img/3.jpg);
+    background-size: cover;
+    background-position: center top;
+    position: absolute;
+    top: 70%;
+    left: 40%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    transition: 0.5s height;
+  }
 
-	.container-sticker1 {
-		width: 220px;
-		height: 250px;
-		background-image: url(/static/img/sticker1.webp);
-		background-size: cover;
-		background-position: center top;
-		position: absolute;
-		top: 70%;
-		right: 0;
-		z-index: 1;
-		transform: translate(-50%, -50%);
-	}
+  .container-image3:hover {
+    height: 500px;
+    transition: 0.5s height;
+  }
 
-	@keyframes cat {
-		from {
-			transform: translate(-50%, -50%) rotate(0deg);
-		}
+  .container-image3:hover ~ .container-image4 {
+    opacity: 0;
+    transition: 0.5s opacity;
+  }
 
-		to {
-			transform: translate(-50%, -50%) rotate(180deg);
-		}
-	}
+  .container-image4 {
+    width: 100px;
+    height: 200px;
+    background-image: url(/static/img/4.jpg);
+    background-size: cover;
+    background-position: center top;
+    position: absolute;
+    top: 70%;
+    right: 0;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    transition: 0.5s opacity;
+  }
 
-	.container-sticker1:hover {
-		animation-duration: 1s;
-		animation-name: cat;
-		animation-iteration-count: infinite;
-		animation-direction: alternate;
-	}
+  .container-sticker1 {
+    width: 220px;
+    height: 250px;
+    background-image: url(/static/img/sticker1.webp);
+    background-size: cover;
+    background-position: center top;
+    position: absolute;
+    top: 70%;
+    right: 0;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+  }
 
-	.strong-m {
-		color:rgb(124, 187, 218);
-	}
+  @keyframes cat {
+    from {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
 
-	.strong-w {
-		color:rgb(197, 118, 201);
-	}
+    to {
+      transform: translate(-50%, -50%) rotate(180deg);
+    }
+  }
 
-	@media screen and (min-width: 768px) {
-		.intro {
-			background-image: url(/static/img/desktop.jpg);
-		}
+  .container-sticker1:hover {
+    animation-duration: 1s;
+    animation-name: cat;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
 
-		.title {
-			font-size: 40px;
-		}
+  .strong-m {
+    color: rgb(124, 187, 218);
+  }
 
-		.event {
-			right: 40px;
-			left: unset;
-			transform: unset;
-		}
+  .strong-w {
+    color: rgb(197, 118, 201);
+  }
 
-		.title__guests {
-			font-size: 24px;
-		}
+  @media screen and (min-width: 768px) {
+    .intro {
+      background-image: url(/static/img/desktop.jpg);
+    }
 
-		.timer {
-			top: 50%;
-			left: unset;
-			right: 50px;
-		}
+    .title {
+      font-size: 40px;
+    }
 
-		.plan {
-			max-width: 450px !important;
-		}
+    .event {
+      right: 40px;
+      left: unset;
+      transform: unset;
+    }
 
-		.guests .text, .plan .text, .dress .text, .place .text, .about-guest .form {
-			top: 50%;
-			left: unset;
-			right: 50%;
-			max-width: 400px;
-			transform: translateY(-50%);
-		}
+    .title__guests {
+      font-size: 24px;
+    }
 
-		.plan .text {
-			left: 100%;
-			width: 500px;
-		}
+    .timer {
+      top: 50%;
+      left: unset;
+      right: 50px;
+    }
 
-		.dress .text {
-			right: 30%;
-		}
+    .plan {
+      max-width: 450px !important;
+    }
 
-		.dress .title, .place .title  {
-			font-size: 30px;
-		}
+    .guests .text,
+    .plan .text,
+    .dress .text,
+    .place .text,
+    .about-guest .form {
+      top: 50%;
+      left: unset;
+      right: 50%;
+      max-width: 400px;
+      transform: translateY(-50%);
+    }
 
-		.dress .text {
-			font-size: 16px;
-		}
+    .plan .text {
+      left: 100%;
+      width: 500px;
+    }
 
-		.place .name {
-			top: 40px;
-			bottom: unset;
-		}
+    .dress .text {
+      right: 30%;
+    }
 
-		.place .text {
-			top: 30%;
-		}
+    .dress .title,
+    .place .title {
+      font-size: 30px;
+    }
 
-		#map {
-			width: 100vw;
-			left: 50%;
-			bottom: 0;
-			height: auto;
-			transform: translateX(-50%);
-		}
-		
-		.about-guest .form {
-			font-size: 16px;
-		}
+    .dress .text {
+      font-size: 16px;
+    }
 
-		.container-image2 {
-			width: 200px;
-			height: 500px;
-			bottom: -100px;
-		}
+    .place .name {
+      top: 40px;
+      bottom: unset;
+    }
 
-		.container-image2:hover {
-			height: 600px;
-		}
+    .place .text {
+      top: 30%;
+    }
 
-		.container-image3 {
-			width: 200px;
-			height: 500px;
-			top: 50%;
-			left: 20%;
-		}
-		
-		.container-image3:hover {
-			height: 550px;
-		}
+    #map {
+      width: 100vw;
+      left: 50%;
+      bottom: 0;
+      height: auto;
+      transform: translateX(-50%);
+    }
 
-		.container-image4 {
-			width: 150px;
-			height: 300px;
-			top: 50%;
-			left: 30%;
-			right: unset;
-		}
-	}
+    .about-guest .form {
+      font-size: 16px;
+    }
+
+    .container-image2 {
+      width: 200px;
+      height: 500px;
+      bottom: -100px;
+    }
+
+    .container-image2:hover {
+      height: 600px;
+    }
+
+    .container-image3 {
+      width: 200px;
+      height: 500px;
+      top: 50%;
+      left: 20%;
+    }
+
+    .container-image3:hover {
+      height: 550px;
+    }
+
+    .container-image4 {
+      width: 150px;
+      height: 300px;
+      top: 50%;
+      left: 30%;
+      right: unset;
+    }
+  }
 </style>
