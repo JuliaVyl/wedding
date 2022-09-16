@@ -21,42 +21,47 @@ import img1 from '../assets/img/1.jpg';
     </section>
 
     <section class='section section_black guests'>
-      <!-- <div class='container-image1'> -->
-      <Picture
+      <div class='container-image1'></div>
+      <!-- <Picture
         src={img1}
         widths={[200, 400, 1500]}
         sizes='(max-width: 800px) 100vw, 800px'
         alt='descriptive text'
         class='container-image1'
-      />
-      <!-- </div> -->
+      /> -->
       <p class='title name title__guests'>ДОРОГИЕ_ГОСТИ</p>
-      <p class='text'>Приглашаем вас на торжество, посвященное нашей свадьбе</p>
+      <div class='text-wrapper'>
+        <p class='text'>
+          Приглашаем вас на торжество, посвященное нашей свадьбе
+        </p>
+      </div>
     </section>
 
     <section class='section plan'>
       <div class='container-image2'></div>
       <p class='title name'>ПЛАН</p>
-      <p class='steps'></p><div class='text plan'>
-        <div class='plan-item'>
-          <p class='plan-time'>14:00</p>
-          <p class='plan-description'>Cбор гостей</p>
-        </div>
-        <div class='plan-item'>
-          <p class='plan-time'>14:30</p>
-          <p class='plan-description'>Церемония</p>
-        </div>
-        <div class='plan-item'>
-          <p class='plan-time'>15:00</p>
-          <p class='plan-description'>Фото с гостями</p>
-        </div>
-        <div class='plan-item'>
-          <p class='plan-time'>15:20</p>
-          <p class='plan-description'>Фуршет</p>
-        </div>
-        <div class='plan-item'>
-          <p class='plan-time'>16:00</p>
-          <p class='plan-description'>Банкет</p>
+      <div class='text-wrapper'>
+        <p class='steps'></p><div class='text plan'>
+          <div class='plan-item'>
+            <p class='plan-time'>14:00</p>
+            <p class='plan-description'>Cбор гостей</p>
+          </div>
+          <div class='plan-item'>
+            <p class='plan-time'>14:30</p>
+            <p class='plan-description'>Церемония</p>
+          </div>
+          <div class='plan-item'>
+            <p class='plan-time'>15:00</p>
+            <p class='plan-description'>Фото с гостями</p>
+          </div>
+          <div class='plan-item'>
+            <p class='plan-time'>15:20</p>
+            <p class='plan-description'>Фуршет</p>
+          </div>
+          <div class='plan-item'>
+            <p class='plan-time'>16:00</p>
+            <p class='plan-description'>Банкет</p>
+          </div>
         </div>
       </div>
     </section>
@@ -65,51 +70,56 @@ import img1 from '../assets/img/1.jpg';
       <div class='container-image3'></div>
       <div class='container-image4'></div>
       <p class='title name'>ДРЕСС_КОД</p>
-      <p class='text'>
-        Зачем нам дресс-код? Только если дресс-КОТ! Хахахахах, ну а если
-        серьезно - <strong class='strong-m'> мужчины</strong> в брюках, рубашках
-        (костюмы - по желанию), <strong class='strong-w'>девушки</strong> - в красивых
-        платьях (желательно спокойных оттенков)
-      </p>
+      <div class='text-wrapper'>
+        <p class='text'>
+          Зачем нам дресс-код? Только если дресс-КОТ! Хахахахах, ну а если
+          серьезно - <strong class='strong-m'> мужчины</strong> в брюках, рубашках
+          (костюмы - по желанию), <strong class='strong-w'>девушки</strong> - в красивых
+          платьях (желательно спокойных оттенков)
+        </p>
+      </div>
     </section>
 
     <section class='section place'>
       <p class='title name'>МЕСТО</p>
-      <p class='text'>
-        Адрес - Киров, Ресторан Terrace, Профсоюзная ул. 23
-      </p><div id='map'></div>
+      <div class='text-wrapper'>
+        <p class='text'>Адрес - Киров, Ресторан Terrace, Профсоюзная ул. 23</p>
+      </div>
+      <div id='map'></div>
     </section>
 
     <section class='section section_black about-guest'>
       <div class='container-sticker1'></div>
       <p class='title name'>О_ВАС</p>
-      <p class='text'></p><form id='form' class='form'>
-        <div class='field'>
-          <label for='firstname' class='text'>Имя</label>
-          <input type='text' name='firstname' required />
-        </div>
-        <div class='field'>
-          <label for='secondname' class='text'>Фамилия</label>
-          <input type='text' name='secondname' required />
-        </div>
-        <div class='field'>
-          <label for='plus-one' class='text'>Плюс 1?</label>
-          <input type='checkbox' name='plus-one' />
-        </div>
-        <div class='field'>
-          <label for='okay' class='text'>Приду :)</label>
-          <input type='radio' name='okay' checked value='okay' />
-        </div>
-        <div class='field'>
-          <label for='okay' class='text'>Не приду :(</label>
-          <input type='radio' name='okay' value='not-okay' />
-        </div>
-        <div class='field'>
-          <button type='submit' id='btn-submit' class='text button'
-            >Тыкнуть</button
-          >
-        </div>
-      </form>
+      <div class='form-container'>
+        <form id='form' class='form'>
+          <div class='field'>
+            <label for='firstname' class='text'>Имя</label>
+            <input type='text' name='firstname' required />
+          </div>
+          <div class='field'>
+            <label for='secondname' class='text'>Фамилия</label>
+            <input type='text' name='secondname' required />
+          </div>
+          <div class='field'>
+            <label for='plus-one' class='text'>Плюс 1?</label>
+            <input type='checkbox' name='plus-one' />
+          </div>
+          <div class='field'>
+            <label for='okay' class='text'>Приду :)</label>
+            <input type='radio' name='okay' checked value='okay' />
+          </div>
+          <div class='field'>
+            <label for='okay' class='text'>Не приду :(</label>
+            <input type='radio' name='okay' value='not-okay' />
+          </div>
+          <div class='field'>
+            <button type='submit' id='btn-submit' class='text button'
+              >Тыкнуть</button
+            >
+          </div>
+        </form>
+      </div>
     </section>
   </main>
 
@@ -228,7 +238,7 @@ import img1 from '../assets/img/1.jpg';
   }
 
   .plan {
-    max-width: 100% !important;
+    /* max-width: 100% !important; */
     display: flex;
     flex-direction: column;
   }
@@ -243,15 +253,21 @@ import img1 from '../assets/img/1.jpg';
     margin-right: 40px;
   }
 
+  .form-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-guest .form {
+    width: 100%;
+    padding: 40px 20px;
+  }
+
   .guests .text,
-  .plan .text,
   .dress .text,
   .place .text,
-  .about-guest .form {
-    position: absolute;
-    max-width: 300px;
-    top: 5%;
-    left: 20px;
+  .plan .text {
+    padding: 60px 20px 0 20px;
   }
 
   ul {
@@ -289,7 +305,7 @@ import img1 from '../assets/img/1.jpg';
 
   .about-guest .form {
     font-size: 14px;
-    width: 100vw;
+    width: 100%;
     font-weight: bold;
   }
 
@@ -435,6 +451,12 @@ import img1 from '../assets/img/1.jpg';
       font-size: 40px;
     }
 
+    .text-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
     .event {
       right: 40px;
       left: unset;
@@ -452,7 +474,7 @@ import img1 from '../assets/img/1.jpg';
     }
 
     .plan {
-      max-width: 450px !important;
+      /* max-width: 450px !important; */
     }
 
     .guests .text,
@@ -460,11 +482,22 @@ import img1 from '../assets/img/1.jpg';
     .dress .text,
     .place .text,
     .about-guest .form {
-      top: 50%;
-      left: unset;
-      right: 50%;
-      max-width: 400px;
-      transform: translateY(-50%);
+      width: 500px;
+    }
+
+    .guests .text,
+    .dress .text,
+    .place .text,
+    .plan .text {
+      padding: 0;
+      padding-top: 120px;
+    }
+
+    .form-container {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      padding-top: 160px;
     }
 
     .plan .text {
