@@ -13,7 +13,6 @@
     "astro": "^1.2.3"
   },
   "dependencies": {
-    "@astrojs/image": "^0.7.0",
     "@astrojs/react": "^1.1.2",
     "@astrojs/vercel": "^2.0.0",
     "@types/react": "17",
